@@ -24,7 +24,7 @@ class Board
       @map[val] = symbol
       return true
     end
-    return false
+    false
   end
 
   def check_map(val, symbol)
@@ -97,6 +97,6 @@ class Board
         winner = true
       end
     end
-    return winner
+    winner
   end
 end
