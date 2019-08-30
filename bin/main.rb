@@ -8,9 +8,19 @@ play_again = true
 while play_again
   play_again = false
   print "Select O or X for player 1: "
-  player1 = Player.new(gets.chomp)
-  print "Select O or X for player 2: "
-  player2 = Player.new(gets.chomp)
+  symbol = gets.chomp
+  symbol.capitalize!
+  while symbol != "O" && symbol != "X"
+    print "Please select O or X : "
+    symbol = gets.chomp
+    symbol.capitalize!
+  end
+  player1 = Player.new(symbol)
+  if player1.player == "X"
+    player2 = Player.new("O")
+  else
+    player2 = Player.new("X")
+  end
   winner = false
   board = Board.new()
   while !winner
