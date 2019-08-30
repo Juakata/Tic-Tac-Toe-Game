@@ -33,7 +33,31 @@ class Board
 
   def check_map(_val, symbol)
     winner = true
-    wins.each do |_key, value|
+    @wins_f.each do |_key, value|
+      winner = true
+      value.each do |i|
+        winner = false unless map[i] == symbol
+      end
+      break if winner
+    end
+    @wins_s.each do |_key, value|
+      break if winner
+      winner = true
+      value.each do |i|
+        winner = false unless map[i] == symbol
+      end
+      break if winner
+    end
+    @wins_fo.each do |_key, value|
+      break if winner
+      winner = true
+      value.each do |i|
+        winner = false unless map[i] == symbol
+      end
+      break if winner
+    end
+    @wins_fi.each do |_key, value|
+      break if winner
       winner = true
       value.each do |i|
         winner = false unless map[i] == symbol
