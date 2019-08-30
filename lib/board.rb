@@ -3,8 +3,10 @@
 class Board
   def initialize
     @map = {}
-    for i in 1..9
+    i = 1
+    9.times do
       @map[i] = "."
+      i+=1
     end
   end
 
@@ -18,7 +20,7 @@ class Board
   end
 
   def addMap(v,symbol)
-    if @map[v] == "."  
+    if @map[v] == "."
       @map[v] = symbol
       return true
     else
