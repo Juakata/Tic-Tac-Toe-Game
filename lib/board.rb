@@ -1,9 +1,8 @@
+# frozen_string_literal: true
+
 class Board
   def display_board
-    print "\n    |    |  \n"
-    print "---------------"
-    print "\n    |    |  \n"
-    print "---------------"
+    2.times{ print "\n    |    |  \n---------------" }
     print "\n    |    |  \n"
   end
 end
