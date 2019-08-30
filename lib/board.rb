@@ -2,7 +2,7 @@
 
 class Board
   def display_board
-    2.times{ print "\n    |    |  \n---------------" }
+    2.times { print "\n    |    |  \n---------------" }
     print "\n    |    |  \n"
   end
 end
