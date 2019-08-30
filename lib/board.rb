@@ -19,12 +19,19 @@ class Board
 
   def addMap(v,symbol)
     @map[v] = symbol
-    checkMap(v)
   end
 
-  def checkMap(v)
+  def checkMap(v,symbol)
+    winner = false
     case v
     when 1
+      if @map[2] == symbol && @map[3] == symbol
+        winner = true
+      elsif @map[5] == symbol && @map[9] == symbol
+        winner = true
+      elsif @map[4] == symbol && @map[7] == symbol
+        winner = true
+      end
     when 2
     when 3
     when 4
@@ -34,5 +41,6 @@ class Board
     when 8
     when 9
     end
+    return winner
   end
 end

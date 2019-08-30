@@ -22,9 +22,10 @@ while play_again
   else
     player2 = Player.new("X")
   end
-  winner = false
+
   board = Board.new()
-  while !winner
+
+  while true
     board.display_board
     print "\nPlayer 1 options [1-9]: "
     move = gets.chomp
@@ -33,6 +34,7 @@ while play_again
       move = gets.chomp
     end
     board.addMap(move.to_i,player1.player.to_s)
+    break if board.checkMap(move.to_i,player1.player.to_s)
     board.display_board
     print "\nPlayer 2 options [1-9]: "
     move = gets.chomp
@@ -44,5 +46,5 @@ while play_again
   end
   print "To play again enter 1: "
   ans = gets.chomp
-  play_again=true if ans == 1
+  play_again = true if ans.to_i == 1
 end
