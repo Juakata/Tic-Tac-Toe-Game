@@ -42,6 +42,7 @@ class Board
         end
         break if winner
       end
+      break if winner
     end
     winner
   end
