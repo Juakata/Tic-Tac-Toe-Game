@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require "../lib/player.rb"
 require "../lib/board.rb"
