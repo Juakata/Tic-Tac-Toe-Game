@@ -31,9 +31,9 @@ class Board
     false
   end
 
-  def check_map(val, symbol)
+  def check_map(_val, symbol)
     winner = true
-    wins.each do |key, value|
+    wins.each do |_key, value|
       winner = true
       value.each do |i|
         winner = false unless map[i] == symbol
