@@ -8,7 +8,7 @@ options = [1,2,3,4,5,6,7,8,9]
 
 while play_again
   play_again = false
-  print "Select O or X for player 1: "
+  print "\nSelect O or X for player 1: "
   symbol = gets.chomp
   symbol.capitalize!
   while symbol != "O" && symbol != "X"
@@ -34,7 +34,8 @@ while play_again
       move = gets.chomp
     end
     board.addMap(move.to_i,player1.player.to_s)
-    break if board.checkMap(move.to_i,player1.player.to_s)
+    player1.winner = true if board.checkMap(move.to_i,player1.player.to_s)
+    break if player1.winner
     board.display_board
     print "\nPlayer 2 options [1-9]: "
     move = gets.chomp
@@ -43,8 +44,17 @@ while play_again
       move = gets.chomp
     end
     board.addMap(move.to_i,player2.player.to_s)
+    player2.winner = true if board.checkMap(move.to_i,player2.player.to_s)
+    break if player2.winner
   end
-  print "To play again enter 1: "
+  board.display_board
+  if player1.winner 
+    print "\n ***** The winner is player 1 ***** \n"
+  else
+    print "\n ***** The winner is player 2 ***** \n"
+  end
+  
+  print "\n To play again enter 1:  "
   ans = gets.chomp
   play_again = true if ans.to_i == 1
 end

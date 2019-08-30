@@ -7,7 +7,7 @@ class Board
       @map[i] = "."
     end
   end
-
+  
   def display_board
     i=1
     3.times do
