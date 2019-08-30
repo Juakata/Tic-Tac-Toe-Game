@@ -33,11 +33,11 @@ while play_again
       print "\nPleas select from 1 to 9: "
       move = gets.chomp
     end
-    while !board.addMap(move.to_i,player1.player.to_s)
+    while !board.add_map(move.to_i,player1.player.to_s)
       print "\nOption already used, select a different option: "
       move = gets.chomp
     end
-    player1.winner = true if board.checkMap(move.to_i,player1.player.to_s)
+    player1.winner = true if board.check_map(move.to_i,player1.player.to_s)
     break if player1.winner
     board.display_board
     print "\nPlayer 2 options [1-9]: "
@@ -46,11 +46,11 @@ while play_again
       print "\nPleas select from 1 to 9: "
       move = gets.chomp
     end
-    while !board.addMap(move.to_i,player2.player.to_s)
+    while !board.add_map(move.to_i,player2.player.to_s)
       print "\nOption already used, select a different option: "
       move = gets.chomp
     end
-    player2.winner = true if board.checkMap(move.to_i,player2.player.to_s)
+    player2.winner = true if board.check_map(move.to_i,player2.player.to_s)
     break if player2.winner
   end
   board.display_board

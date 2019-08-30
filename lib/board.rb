@@ -5,32 +5,31 @@ class Board
     @map = {}
     i = 1
     9.times do
-      @map[i] = "."
-      i+=1
+      @map[i] = '.'
+      i += 1
     end
   end
 
   def display_board
     i = 1
     3.times do
-      print "\n #{@map[i]} | #{@map[i+1]} | #{@map[i+2]} \n"
-      print "-----------" if i <= 6
+      print "\n #{@map[i]} | #{@map[i + 1]} | #{@map[i + 2]} \n"
+      print '-----------' if i <= 6
       i += 3
     end
   end
 
-  def addMap(v,symbol)
-    if @map[v] == "."
-      @map[v] = symbol
+  def add_map(val, symbol)
+    if @map[val] == '.'
+      @map[val] = symbol
       return true
-    else
-      return false
     end
+    return false
   end
 
-  def checkMap(v,symbol)
+  def check_map(val, symbol)
     winner = false
-    case v
+    case val
     when 1
       if @map[2] == symbol && @map[3] == symbol
         winner = true
