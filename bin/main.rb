@@ -1,4 +1,7 @@
 
+require "../lib/player.rb"
+require "../lib/board.rb"
+
 play_again = true
 
 while play_again
