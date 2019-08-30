@@ -11,11 +11,11 @@ class Board
   end
 
   def display_board
-    i=1
+    i = 1
     3.times do
       print "\n #{@map[i]} | #{@map[i+1]} | #{@map[i+2]} \n"
-      print "-----------" if i<=6
-      i+=3
+      print "-----------" if i <= 6
+      i += 3
     end
   end
 
