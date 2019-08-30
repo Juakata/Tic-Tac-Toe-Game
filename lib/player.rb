@@ -4,6 +4,6 @@ class Player
   end
 
   def player
-    return player
+    @player
   end
 end
