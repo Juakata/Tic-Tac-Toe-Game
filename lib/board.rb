@@ -7,7 +7,7 @@ class Board
       @map[i] = "."
     end
   end
-  
+
   def display_board
     i=1
     3.times do
@@ -18,7 +18,12 @@ class Board
   end
 
   def addMap(v,symbol)
-    @map[v] = symbol
+    if @map[v] == "."  
+      @map[v] = symbol
+      return true
+    else
+      return false
+    end
   end
 
   def checkMap(v,symbol)
@@ -36,7 +41,7 @@ class Board
       if @map[1] == symbol && @map[3] == symbol
         winner = true
       elsif @map[5] == symbol && @map[8] == symbol
-        winner = true    
+        winner = true
       end
     when 3
       if @map[1] == symbol && @map[2] == symbol
