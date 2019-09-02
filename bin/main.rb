@@ -1,17 +1,13 @@
 # frozen_string_literal: true
 
-require "../lib/player.rb"
-require "../lib/board.rb"
-
-play_again = true
-options = [1,2,3,4,5,6,7,8,9]
-
-while play_again
-  play_again = false
+require "../lib/game.rb"
+game = Game.new()
+while game.play_again
+  game.play_again = false
   print "\nSelect O or X for player 1: "
   symbol = gets.chomp
   symbol.capitalize!
-  while symbol != "O" && symbol != "X"
+  while !game.players.include?symbol
     print "Please select O or X : "
     symbol = gets.chomp
     symbol.capitalize!
@@ -29,7 +25,7 @@ while play_again
     board.display_board
     print "\nPlayer 1 options [1-9]: "
     move = gets.chomp
-    while !options.include? move.to_i
+    while !game.options.include? move.to_i
       print "\nPleas select from 1 to 9: "
       move = gets.chomp
     end
@@ -42,7 +38,7 @@ while play_again
     board.display_board
     print "\nPlayer 2 options [1-9]: "
     move = gets.chomp
-    while !options.include? move.to_i
+    while !game.options.include? move.to_i
       print "\nPleas select from 1 to 9: "
       move = gets.chomp
     end
