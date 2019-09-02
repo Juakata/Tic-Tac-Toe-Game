@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "../lib/game.rb"
+require '../lib/game.rb'
 game = Game.new()
 while game.play_again
   game.play_again = false
