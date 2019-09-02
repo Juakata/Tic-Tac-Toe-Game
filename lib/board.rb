@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Board
+  attr_accessor :winner
   def initialize
     @wins1 = { 1 => [1, 2, 3], 2 => [1, 5, 9], 3 => [1, 4, 7], 4 => [2, 1, 3], 5 => [2, 5, 8], 6 => [3, 1, 2] }
     @wins2 = { 7 => [3, 5, 7], 8 => [3, 6, 9], 9 => [4, 1, 7], 10 => [4, 5, 6], 11 => [5, 2, 8], 12 => [5, 4, 6] }
@@ -13,6 +14,7 @@ class Board
       @map[i] = '.'
       i += 1
     end
+    @winner = 0
   end
 
   def display_board
@@ -34,17 +36,17 @@ class Board
   end
 
   def check_map(_val, symbol)
-    winner = true
+    win = true
     @wins.each do |element|
       element.each do |_key, value|
-        winner = true
+        win = true
         value.each do |i|
-          winner = false unless @map[i] == symbol
+          win = false unless @map[i] == symbol
         end
-        break if winner
+        break if win
       end
-      break if winner
+      break if win
     end
-    winner
+    win
   end
 end

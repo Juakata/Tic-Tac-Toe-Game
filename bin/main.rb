@@ -33,8 +33,8 @@ while game.play_again
       print "\nOption already used, select a different option: "
       move = gets.chomp
     end
-    player1.winner = true if board.check_map(move.to_i,player1.player.to_s)
-    break if player1.winner
+    board.winner = 1 if board.check_map(move.to_i,player1.player.to_s)
+    break if board.winner != 0
     board.display_board
     print "\nPlayer 2 options [1-9]: "
     move = gets.chomp
@@ -46,11 +46,11 @@ while game.play_again
       print "\nOption already used, select a different option: "
       move = gets.chomp
     end
-    player2.winner = true if board.check_map(move.to_i,player2.player.to_s)
-    break if player2.winner
+    board.winner = 2 if board.check_map(move.to_i,player2.player.to_s)
+    break if board.winner != 0
   end
   board.display_board
-  if player1.winner
+  if board.winner == 1
     print "\n ***** The winner is player 1 ***** \n"
   else
     print "\n ***** The winner is player 2 ***** \n"
@@ -58,5 +58,5 @@ while game.play_again
 
   print "\n To play again enter 1:  "
   ans = gets.chomp
-  play_again = true if ans.to_i == 1
+  game.play_again = true if ans.to_i == 1
 end
