@@ -35,7 +35,7 @@ while game.play_again
     end
     board.winner = 1 if board.check_map(move.to_i,player1.player.to_s)
     break if board.winner != 0
-    break if Board.plays == 9
+    break if board.plays == 9
     print board.display_board
     print "\nPlayer 2 options [1-9]: "
     move = gets.chomp
@@ -49,7 +49,7 @@ while game.play_again
     end
     board.winner = 2 if board.check_map(move.to_i,player2.player.to_s)
     break if board.winner != 0
-    break if Board.plays == 9
+    break if board.plays == 9
   end
   print board.display_board
   if board.winner == 1
@@ -64,6 +64,6 @@ while game.play_again
   ans = gets.chomp
   if ans.to_i == 1
     game.play_again = true
-    Board.plays = 0
+    board.plays = 0
   end
 end
