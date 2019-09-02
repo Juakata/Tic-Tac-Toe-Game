@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class Board
-  attr_accessor :winner
-  
+  attr_accessor :winner :plays
   def initialize
     @plays = 0
     @wins1 = { 1 => [1, 2, 3], 2 => [4, 5, 6], 3 => [7, 8, 9], 4 => [1, 4, 7] }
@@ -52,12 +51,5 @@ class Board
     end
     win
   end
-
-  def self.plays
-    @@plays
-  end
-
-  def self.plays=(value)
-    @plays = value
-  end
 end
+
