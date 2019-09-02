@@ -52,4 +52,3 @@ class Board
     win
   end
 end
-
