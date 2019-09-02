@@ -2,6 +2,7 @@
 
 class Board
   attr_accessor :winner
+  @@plays = 0
   def initialize
     @wins1 = { 1 => [1, 2, 3], 2 => [4, 5, 6], 3 => [7, 8, 9], 4 => [1, 4, 7] }
     @wins2 = { 5 => [2, 5, 8], 6 => [3, 6, 9], 7 => [1, 5, 9], 8 => [3, 5, 7] }
@@ -17,17 +18,20 @@ class Board
 
   def display_board
     i = 1
+    string = ""
     3.times do
-      print "\n #{@map[i]} | #{@map[i + 1]} | #{@map[i + 2]} \n"
-      print '-----------' if i <= 6
+      string += "\n #{@map[i]} | #{@map[i + 1]} | #{@map[i + 2]} \n"
+      string += '-----------' if i <= 6
       i += 3
     end
+    string
   end
 
   def add_map(val, symbol)
     result = false
     if @map[val] == '.'
       @map[val] = symbol
+      @@plays += 1
       result = true
     end
     result
@@ -46,5 +50,13 @@ class Board
       break if win
     end
     win
+  end
+
+  def self.plays
+    @@plays
+  end
+
+  def self.plays=(value)
+    @@plays = value
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require '../lib/player.rb'
-require '../lib/board.rb'
+require_relative 'player.rb'
+require_relative 'board.rb'
 
 class Game
   attr_accessor :play_again

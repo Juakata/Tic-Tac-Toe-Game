@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require '../lib/game.rb'
+require_relative '../lib/game.rb'
 game = Game.new()
 while game.play_again
   game.play_again = false
@@ -22,7 +22,7 @@ while game.play_again
   board = Board.new()
 
   while true
-    board.display_board
+    print board.display_board
     print "\nPlayer 1 options [1-9]: "
     move = gets.chomp
     while !game.options.include? move.to_i
@@ -35,7 +35,8 @@ while game.play_again
     end
     board.winner = 1 if board.check_map(move.to_i,player1.player.to_s)
     break if board.winner != 0
-    board.display_board
+    break if Board.plays == 9
+    print board.display_board
     print "\nPlayer 2 options [1-9]: "
     move = gets.chomp
     while !game.options.include? move.to_i
@@ -48,15 +49,21 @@ while game.play_again
     end
     board.winner = 2 if board.check_map(move.to_i,player2.player.to_s)
     break if board.winner != 0
+    break if Board.plays == 9
   end
-  board.display_board
+  print board.display_board
   if board.winner == 1
     print "\n ***** The winner is player 1 ***** \n"
-  else
+  elsif board.winner == 2
     print "\n ***** The winner is player 2 ***** \n"
+  else
+    print "\n ***** DRAW! ***** \n"
   end
 
   print "\n To play again enter 1:  "
   ans = gets.chomp
-  game.play_again = true if ans.to_i == 1
+  if ans.to_i == 1
+    game.play_again = true
+    Board.plays = 0
+  end
 end
