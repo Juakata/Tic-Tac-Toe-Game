@@ -11,6 +11,10 @@ You have 9 options to choose:
 4 | 5 | 6
 ----------
 7 | 8 | 9
+----------
+4 | 5 | 6
+----------
+7 | 8 | 9
 
 The winner is the player that can get 3 symbols inline.
 For example:
