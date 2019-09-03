@@ -2,13 +2,12 @@
 
 class Board
   attr_accessor :winner, :plays
-
   def initialize
+    @plays = 0
     @wins1 = { 1 => [1, 2, 3], 2 => [4, 5, 6], 3 => [7, 8, 9], 4 => [1, 4, 7] }
     @wins2 = { 5 => [2, 5, 8], 6 => [3, 6, 9], 7 => [1, 5, 9], 8 => [3, 5, 7] }
     @wins = [@wins1, @wins2]
     @map = {}
-    @plays = 0
     i = 1
     9.times do
       @map[i] = '.'
