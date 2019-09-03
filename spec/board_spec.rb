@@ -10,14 +10,13 @@ RSpec.describe Board do
   let(:result2) { "\n X | O | . \n-----------\n X | . | . \n-----------\n . | . | . \n" }
   describe '#display_board' do
     it 'returns the board' do
-
       expect(board.display_board).to eql(result1)
     end
 
     it 'returns the board with some values' do
-      board.add_map(1, "X")
-      board.add_map(2, "O")
-      board.add_map(4, "X")
+      board.add_map(1, 'X')
+      board.add_map(2, 'O')
+      board.add_map(4, 'X')
       expect(board.display_board).to eql(result2)
     end
   end
