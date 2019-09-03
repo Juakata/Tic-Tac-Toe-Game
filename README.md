@@ -5,6 +5,7 @@ To start the game you need to run the main.rb file that is located on bin.
 
 Each player can select O or X  to start the game.
 You have 9 options to choose:
+
   1 | 2 | 3
   ----------
   4 | 5 | 6
