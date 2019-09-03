@@ -6,12 +6,11 @@ To start the game you need to run the main.rb file that is located on bin.
 Each player can select O or X  to start the game.
 You have 9 options to choose:
 
-  1 | 2 | 3
-  ----------
-  4 | 5 | 6
-  ----------
-  4 | 5 | 6
-  
+1 | 2 | 3
+----------
+4 | 5 | 6
+----------
+7 | 8 | 9
 
 The winner is the player that can get 3 symbols inline.
 For example:
