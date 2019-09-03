@@ -37,7 +37,7 @@ class Board
     result
   end
 
-  def check_map(_val, symbol)
+  def check_map(symbol)
     win = true
     @wins.each do |element|
       element.each do |_key, value|
